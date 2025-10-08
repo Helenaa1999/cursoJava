@@ -6,7 +6,7 @@ public class Cliente {
 	private static Random rand = new Random();
 	private int ID;
 	private String nombre;
-	private Banco banco;
+	private CuentaBanco cuentaBanco;
 	
 	private int numClientes;
 	
@@ -22,8 +22,5 @@ public class Cliente {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
 	
 }

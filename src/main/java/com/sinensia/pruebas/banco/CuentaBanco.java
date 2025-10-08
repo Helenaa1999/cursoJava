@@ -1,9 +1,9 @@
 package com.sinensia.pruebas.banco;
 
-public class Banco {
+public class CuentaBanco {
 	private double saldo;
 	
-	public Banco (double saldoInicial) {
+	public CuentaBanco (double saldoInicial) {
 		this.saldo = saldoInicial;
 		if(saldoInicial < 0) {
 			throw new IllegalArgumentException("El saldo inicial no puede ser negativo");
@@ -35,6 +35,8 @@ public class Banco {
 		String mensaje = "Tienes " + saldo + " euros en tu cuenta.";
 		System.out.println(mensaje);
 	}	
+	
+	
 	
 	public Estado verificarInput(String respuestaUsuario) {
 		try {

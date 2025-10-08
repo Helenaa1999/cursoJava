@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Banco banco1 = new Banco(1200);
+		CuentaBanco banco1 = new CuentaBanco(1200);
 		mostrarMenu();
 		try(Scanner scanner = new Scanner(System.in)){
 			int respuestaUsuario = scanner.nextInt();
