@@ -7,6 +7,7 @@ public class GuessGame {
 	
 	private final int maxVidas = 5;
 	private int numSecreto = RAM.nextInt(1,11);
+
 	public int getMaxVidas() {
 		return maxVidas;
 	}

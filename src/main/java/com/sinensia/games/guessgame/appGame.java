@@ -4,7 +4,7 @@ public class appGame {
 
 	package com.sinensia.games.guessgame;
 
-	import com.sinensia.games.GuessGame.Estado;
+	import com.sinensia.games.guessgame.GuessGame.Estado;;
 
 	public class AppGame {
 

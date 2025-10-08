@@ -35,4 +35,26 @@ public class Banco {
 		String mensaje = "Tienes " + saldo + " euros en tu cuenta.";
 		System.out.println(mensaje);
 	}	
+	
+	public Estado verificarInput(String respuestaUsuario) {
+		try {
+			int respuestaUsuarioInt = Integer.parseInt(respuestaUsuario);
+			if(respuestaUsuarioInt <1 || respuestaUsuarioInt >4) {
+				return Estado.FAILED;
+			}else {
+				if(respuestaUsuarioInt == 0) {
+					return Estado.LEAVEAPPLICATION;
+				}
+				else {
+					return Estado.SUCCESS;
+				}
+			}
+		}catch (NumberFormatException e) {
+			return Estado.INVALID;
+		}
+	}
+	
+	public enum Estado {
+		SUCCESS, FAILED, INVALID, LEAVEAPPLICATION
+	}
 }
