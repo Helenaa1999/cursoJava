@@ -1,16 +1,36 @@
 package com.sinensia.pruebas.banco;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		/*LinkedList <Cliente> listaClientes = new LinkedList<>();
+		Cliente cliente1 = new Cliente("555555J", "Helena");
+		Cliente cliente2 = new Cliente("555555J", "Helena");
+		listaClientes.add(cliente1);
+		listaClientes.add(cliente2);
+		for(Cliente cliente : listaClientes) {
+			System.out.println(cliente);
+		}
+		
+		HashSet <Cliente> listaClientesSinDuplicar = new HashSet<>(listaClientes);
+		for(Cliente cliente : listaClientesSinDuplicar) {
+			System.out.println(cliente);
+		}
+		*/
+		
 		String DNI;
 		CuentaBanco banco1 = new CuentaBanco(1200);
 		
 		try(Scanner scanner = new Scanner(System.in)){
-			System.out.println("Bienvenido a las operaciones del banco x. \n"
+			
+		System.out.println("Bienvenido a las operaciones del banco x. \n"
 				+ "Introduce tu DNI para poder realizar gestiones.");
+		
+		
 			DNI = scanner.next();
 			if(DNI != null) {
 				mostrarMenu();

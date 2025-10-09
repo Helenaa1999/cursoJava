@@ -2,7 +2,7 @@ package com.sinensia.pruebas.banco;
 
 public class CuentaBanco {
 	private double saldo;
-	private String DNI;
+	private String dni;
 	public CuentaBanco (double saldoInicial) {
 		this.saldo = saldoInicial;
 		if(saldoInicial < 0) {

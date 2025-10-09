@@ -1,18 +1,21 @@
 package com.sinensia.pruebas.banco;
 
+import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Random;
 
+import colegio.Alumno;
+
 public class Cliente {
-	private final String DNI;
+	private final String dni;
 	private String nombre;
-	//Hacer un ArrayList para que los clientes puedan tener varias cuentas
-	private CuentaBanco cuentaBanco;
+	private LinkedList <CuentaBanco> cuentaBanco;
 	
 	private int numClientes;
 	
-	public Cliente(String nombre, String DNI) {
+	public Cliente(String nombre, String dni) {
 		this.nombre = nombre;
-		this.DNI = DNI;
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -23,4 +26,28 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 	
+	
+	
+	//Convertir en MAIN la lista a HASHCHECK para que no se guarden usuarios repetidos.
+	@Override
+	public String toString() {
+        return nombre + " (" + dni + ")";
+    }
+   
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Cliente cliente = (Cliente) obj;
+        return Objects.equals(dni, cliente.dni);
+    }
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(dni);
+	}
 }
