@@ -3,16 +3,16 @@ package com.sinensia.pruebas.banco;
 import java.util.Random;
 
 public class Cliente {
-	private static Random rand = new Random();
-	private int ID;
+	private final String DNI;
 	private String nombre;
+	//Hacer un ArrayList para que los clientes puedan tener varias cuentas
 	private CuentaBanco cuentaBanco;
 	
 	private int numClientes;
 	
-	public Cliente(String nombre) {
-		ID = rand.nextInt(1, 1999);
+	public Cliente(String nombre, String DNI) {
 		this.nombre = nombre;
+		this.DNI = DNI;
 	}
 
 	public String getNombre() {
