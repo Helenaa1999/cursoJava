@@ -72,7 +72,7 @@ public class Main {
 			System.out.println("Se ha producido un error");
 		}
 	
-	
+	}
 	public static void mostrarMenuInicial() {
 		System.out.println("DNI correcto. ¿Qué acción desea realizar? \n"
 				+ "1. Modificar datos personales \n"
@@ -86,5 +86,9 @@ public class Main {
 				+ "3. Mostrar el saldo \n"
 				+ "0. Salir");
 	}
-
+	public static boolean (LinkedList Cliente) {
+		for (Cliente cliente: Cliente) {
+			return cliente.comprobarDniExistente(DNI;)
+		}
+	}
 }
