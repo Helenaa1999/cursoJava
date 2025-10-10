@@ -16,6 +16,7 @@ public class Cliente {
 	public Cliente(String nombre, String dni) {
 		this.nombre = nombre;
 		this.dni = dni;
+		this.cuentaBanco = new LinkedList<>();
 	}
 
 	public String getNombre() {
@@ -26,7 +27,18 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 	
+	public LinkedList<CuentaBanco> getCuentaBanco() {
+		return cuentaBanco;
+	}
+
+	public void setCuentaBanco(LinkedList<CuentaBanco> cuentaBanco) {
+		this.cuentaBanco = cuentaBanco;
+	}
 	
+	public boolean comprobarDniExistente(String dni) {
+		return dni.equals(this.dni);
+		
+	}
 	
 	//Convertir en MAIN la lista a HASHCHECK para que no se guarden usuarios repetidos.
 	@Override
@@ -34,6 +46,8 @@ public class Cliente {
         return nombre + " (" + dni + ")";
     }
    
+
+
 	@Override
     public boolean equals(Object obj) {
         if (this == obj) {
