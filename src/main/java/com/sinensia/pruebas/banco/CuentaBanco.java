@@ -3,9 +3,10 @@ package com.sinensia.pruebas.banco;
 public class CuentaBanco {
 	private double saldo;
 	private String dni;
-	public CuentaBanco (double saldoInicial) {
-		this.saldo = saldoInicial;
-		if(saldoInicial < 0) {
+	public CuentaBanco (double saldo, String dni) {
+		this.saldo = saldo;
+		this.dni = dni;
+		if(saldo < 0) {
 			throw new IllegalArgumentException("El saldo inicial no puede ser negativo");
 		}
 	}

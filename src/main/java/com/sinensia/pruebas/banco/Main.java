@@ -8,13 +8,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		LinkedList <Cliente> listaClientes = new LinkedList<>();
-		Cliente cliente1 = new Cliente("555555J", "Helena");
-		Cliente cliente2 = new Cliente("555555J", "Helena");
+		Cliente cliente1 = new Cliente("Helena", "555555J");
+		Cliente cliente2 = new Cliente("Helena", "555555J");
 		listaClientes.add(cliente1);
 		listaClientes.add(cliente2);
-		for(Cliente cliente : listaClientes) {
-			System.out.println(cliente);
-		}
+		
 		
 		HashSet <Cliente> listaClientesSinDuplicar = new HashSet<>(listaClientes);
 		for(Cliente cliente : listaClientesSinDuplicar) {
@@ -25,16 +23,24 @@ public class Main {
 		String DNI;
 		
 		try(Scanner scanner = new Scanner(System.in)){
-			
-		System.out.println("Bienvenido a las operaciones del banco x. \n"
+			System.out.println("Bienvenido a las operaciones del banco x. \n"
 				+ "Introduce tu DNI para poder realizar gestiones.");
 			DNI = scanner.next();
-			if() {
+			boolean encontrado= false;
+			Cliente clienteEncontrado = new Cliente("","");
+			for(Cliente cliente : listaClientesSinDuplicar) {
+				if(cliente.comprobarDniExistente(DNI)) {
+					clienteEncontrado = cliente;
+					encontrado=true;
+				}
+			}
+			if(encontrado) {
 				mostrarMenuInicial();
 				int respuestaUsuario = scanner.nextInt();
 				while (respuestaUsuario !=0) {
 					switch(respuestaUsuario) {
 						case 1:
+							//AÑADIR GESTIONES BANCO
 							break;
 						case 2: 
 							mostrarMenuBanco();
@@ -44,15 +50,15 @@ public class Main {
 									case 1:
 										System.out.println("¿Cuánto dinero deseas sacar?");
 										double cantidadSacar = scanner.nextDouble();
-										banco1.sacarDinero(cantidadSacar);
+										clienteEncontrado.getCuentaBanco().sacarDinero(cantidadSacar);
 										break;
 									case 2:
 										System.out.println("¿Cuánto dinero deseas ingresar?");
 										double cantidadIngresar = scanner.nextDouble();
-										banco1.ingresarDinero(cantidadIngresar);
+										clienteEncontrado.getCuentaBanco().ingresarDinero(cantidadIngresar);
 										break;
 									case 3: 
-									banco1.mostrarInfo();
+										clienteEncontrado.getCuentaBanco().mostrarInfo();
 									break;
 								default:
 									System.out.println("Dato erróneo. Inténtelo de nuevo.");
@@ -67,7 +73,9 @@ public class Main {
 					System.out.println("Has salido del programa");
 					}
 				}	
-			}	
+			}else {
+				System.out.println("Cliente no encontrado");
+			}
 		}catch(Exception e) {
 			System.out.println("Se ha producido un error");
 		}
@@ -86,9 +94,5 @@ public class Main {
 				+ "3. Mostrar el saldo \n"
 				+ "0. Salir");
 	}
-	public static boolean (LinkedList Cliente) {
-		for (Cliente cliente: Cliente) {
-			return cliente.comprobarDniExistente(DNI;)
-		}
-	}
+
 }

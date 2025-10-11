@@ -9,14 +9,13 @@ import colegio.Alumno;
 public class Cliente {
 	private final String dni;
 	private String nombre;
-	private LinkedList <CuentaBanco> cuentaBanco;
-	
-	private int numClientes;
+	private CuentaBanco cuentaBanco;
 	
 	public Cliente(String nombre, String dni) {
 		this.nombre = nombre;
 		this.dni = dni;
-		this.cuentaBanco = new LinkedList<>();
+		CuentaBanco cuenta = new CuentaBanco(0, dni);
+		this.cuentaBanco = cuenta;
 	}
 
 	public String getNombre() {
@@ -27,11 +26,11 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 	
-	public LinkedList<CuentaBanco> getCuentaBanco() {
+	public CuentaBanco getCuentaBanco() {
 		return cuentaBanco;
 	}
 
-	public void setCuentaBanco(LinkedList<CuentaBanco> cuentaBanco) {
+	public void setCuentaBanco(CuentaBanco cuentaBanco) {
 		this.cuentaBanco = cuentaBanco;
 	}
 	
